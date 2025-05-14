@@ -7,6 +7,11 @@ terraform {
   }
 }
 
+variable "github_token" {
+  type      = string
+  sensitive = true
+}
+
 provider "github" {
   token = var.github_token
   owner = "JordanPio"
@@ -18,7 +23,7 @@ resource "github_branch_protection" "main" {
 
   required_status_checks {
     strict   = true
-    contexts = ["Run Dummy CI"]
+    contexts = ["Run Dummy CI", "Lint Code"]
   }
 
 
