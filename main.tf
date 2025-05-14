@@ -26,6 +26,9 @@ resource "github_branch_protection" "main" {
     contexts = ["Run Dummy CI", "Lint Code"]
   }
 
-
   enforce_admins = true
+
+  bypass_status_check_allowances {
+    users = ["JordanPio"]
+  }
 }
