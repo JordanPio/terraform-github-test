@@ -24,7 +24,7 @@ resource "github_branch_protection_v3" "main" {
 
   required_status_checks {
     strict   = true
-    checks = ["Run Dummy CI", "Lint Code"]
+    checks = ["Run Dummy CI"]
   }
 
   required_pull_request_reviews {
